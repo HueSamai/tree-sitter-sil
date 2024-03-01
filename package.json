@@ -1,0 +1,29 @@
+{
+  "name": "tree-sitter-sil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bindings/node",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huesamai",
+  "license": "ISC",
+  "dependencies": {
+    "nan": "^2.18.0",
+    "npm": "^10.5.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.21.0"
+  },
+  "tree-sitter": [
+    {
+      "scope": "source.sil",
+      "file-types": [
+          ".sil"
+      ],
+      "highlights": [
+        "queries/highlights.scm"
+    ]
+    }
+  ]
+}
