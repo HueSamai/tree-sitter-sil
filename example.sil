@@ -1,1 +1,4 @@
-yo(a == b, b == 1);
+print "hello, world"; // this is a comment
+print "goodbye!";
+#include
+

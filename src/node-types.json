@@ -43,6 +43,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "conditional",
     "named": true,
     "fields": {},
@@ -255,6 +260,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "include",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "inputExpr",
@@ -482,6 +492,11 @@
     }
   },
   {
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "term",
     "named": true,
     "fields": {},
@@ -581,6 +596,14 @@
     "named": false
   },
   {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
     "type": "(",
     "named": false
   },
@@ -622,6 +645,10 @@
   },
   {
     "type": "/",
+    "named": false
+  },
+  {
+    "type": "//",
     "named": false
   },
   {
@@ -723,10 +750,6 @@
   {
     "type": "stop",
     "named": false
-  },
-  {
-    "type": "string",
-    "named": true
   },
   {
     "type": "true",

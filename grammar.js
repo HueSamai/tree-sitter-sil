@@ -1,9 +1,15 @@
 module.exports = grammar({
     name: 'sil',
 
+    extras: $ => [
+        /\s/,
+        $.comment,
+        $.include,
+    ],
+
     rules: {
         source_file: $ => repeat($.statement),
-
+        
         statement: $ => choice(
             $.block,
             $.ifStmt,
@@ -225,7 +231,14 @@ module.exports = grammar({
         
         number: $ => /\d+(\.\d+)?/,
 
-        string: $ => /"[^"]*"/,
+        string: $ => seq(
+            '"',
+            repeat(choice(
+                token.immediate(prec(1, /[^\\"]+/)),
+                token.immediate(prec(1, seq("\\", /./))),
+            )),
+            prec(0, '"'),
+        ),
 
         assignment_op: $ => choice(
             "=",
@@ -233,6 +246,10 @@ module.exports = grammar({
             "/=",
             "+=",
             "-="
-        )
+        ),
+
+        comment: $ => seq("//", /.*/),
+
+        include: $ => seq("#", /.*/)
     }
 });
