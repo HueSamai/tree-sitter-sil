@@ -6,24 +6,22 @@
     "for"
     "while"
     "stop"
-    "skip",
-    "var",
-    "print",
+    "skip"
+    "var"
+    "print"
     "input"
-] @kewyord
+] @keyword
 
-((identifier) @function.builtin (#match? @function.builtin "^(num|read|write|exists|rng|seed|push|pop)$"))
 (identifier) @variable
 (string) @string
 (number) @number
 (block) @local.scope
 (funcDecl name: (identifier) @function)
-(funcDecl params: (params (identifier) @variable.parameter))
-[
-    (true)
-    (false)
-    (novalue)
-] @constant.builtin
+(comment) @comment
+(include) @comment
+
+((identifier) @function.builtin
+ (#match? @function.builtin "(num|read|push|pop|exists|rng|seed|length|round)"))
 
 [
     ";"
@@ -46,8 +44,8 @@
     "<="
     ">"
     "<"
-    "!",
-    "and",
+    "!"
+    "and"
     "or"
 ] @operator
 
@@ -59,3 +57,5 @@
     "["
     "]"
 ] @punctuation.bracket
+
+
