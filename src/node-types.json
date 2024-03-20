@@ -494,7 +494,17 @@
   {
     "type": "string",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escapeChar",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "term",
@@ -698,6 +708,10 @@
   {
     "type": "else",
     "named": false
+  },
+  {
+    "type": "escapeChar",
+    "named": true
   },
   {
     "type": "false",
