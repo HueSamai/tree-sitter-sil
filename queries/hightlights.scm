@@ -18,10 +18,11 @@
 (block) @local.scope
 (funcDecl name: (identifier) @function)
 (comment) @comment
-(include) @comment
+(include) @keyword.directive
+(escapeChar) @constant
 
 ((identifier) @function.builtin
- (#match? @function.builtin "(num|read|push|pop|exists|rng|seed|length|round)"))
+ (#match? @function.builtin "(num|read|push|pop|exists|rng|seed|length|round|write)"))
 
 [
     ";"
@@ -30,6 +31,7 @@
 ] @punctuation.delimiter
 
 [
+    "="
     "-"
     "+"
     "/"
@@ -58,4 +60,9 @@
     "]"
 ] @punctuation.bracket
 
+[
+    "true"
+    "false"
+    "novalue"
+] @constant
 
