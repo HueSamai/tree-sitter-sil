@@ -1223,7 +1223,9 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'r') ADVANCE(42);
       END_STATE();
     case 13:
-      if (lookahead == 'n' ||
+      if (lookahead == '"' ||
+          lookahead == '\\' ||
+          lookahead == 'n' ||
           lookahead == 'r' ||
           lookahead == 't') ADVANCE(118);
       if (('0' <= lookahead && lookahead <= '9') ||

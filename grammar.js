@@ -235,7 +235,7 @@ module.exports = grammar({
             '"',
             repeat(choice(
                 token.immediate(prec(1, /[^\\"]+/)),
-                alias(token.immediate(prec(1, seq("\\", /n|t|r|[0-9a-fA-F][0-9a-fA-F]/))), $.escapeChar),
+                alias(token.immediate(prec(1, seq("\\", /n|t|r|"|\\|[0-9a-fA-F][0-9a-fA-F]/))), $.escapeChar),
             )),
             prec(0, '"'),
         ),

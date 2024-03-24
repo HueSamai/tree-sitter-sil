@@ -934,7 +934,7 @@
                         },
                         {
                           "type": "PATTERN",
-                          "value": "n|t|r|[0-9a-fA-F][0-9a-fA-F]"
+                          "value": "n|t|r|\"|\\\\|[0-9a-fA-F][0-9a-fA-F]"
                         }
                       ]
                     }
